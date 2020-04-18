@@ -1,0 +1,45 @@
+//encapsulation is a protective shield that prevents the data from being accessed by the code outside this shield
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace encapsulation
+{
+
+
+    class Rectangle
+    {
+        public double length;
+        public double breadth;
+
+        public double getarea()
+        {
+            return length * breadth;
+        }
+        public void display()
+        {
+            Console.WriteLine("The length is {0}", length);
+            Console.WriteLine("The breadth is {0}", breadth);
+            Console.WriteLine(" The area is {0}", getarea());
+        }
+    }
+
+        class xyz
+        {
+
+            static void Main(string[] args)
+            {
+            Rectangle r = new Rectangle();
+            r.length = 3.0;
+            r.breadth = 4;
+            r.display();
+            Console.ReadKey();
+
+
+            }
+        }
+    
+}

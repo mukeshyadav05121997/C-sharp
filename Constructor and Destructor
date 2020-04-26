@@ -1,0 +1,56 @@
+Constructor is member  function which get executed when object of is created of that class
+A constructor has exactly the same name as that of class and it does not have any return type
+
+There are two type of constructor
+1.Default constructor:which do not have parameter
+2.parameter constructor:which have parameter
+--------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace constructor
+{
+
+    class rectangle
+    {
+        double length;
+        double breadth;
+
+        public rectangle() //constructor
+        {
+            Console.WriteLine("Wow Great,Object is created hence constructor is executed");
+        }
+        public void setdata(double len,double bread)
+        {
+            length = len;
+            breadth = bread;
+
+        }
+        public double getdata()
+        {
+            return length * breadth;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            rectangle line1 = new rectangle(); //constructor will executed
+            //line1.setdata(4.0, 3.0);
+          //  Console.WriteLine("The Area of Rectangle is {0}", line1.getdata());
+            Console.ReadKey();
+        }
+    }
+}
+
+**************************************************************************************************************************************
+Destructor:
+A destructor is a special member function of a class that is executed whenever an object of its class goes out of scope.
+A destructor has exactly the same name as that of the class with a prefixed tilde (~) and it can neither return a value nor can it take any parameters.
+Destructor can be very useful for releasing memory resources before exiting the program. Destructors cannot be inherited or overloaded
+
+
+

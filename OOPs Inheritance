@@ -1,0 +1,152 @@
+Inheritance allows us to define a class in terms of another class, which makes it easier to create and maintain an application. 
+This also provides an opportunity to reuse the code functionality and speeds up implementation time.
+*Type of Inheritance
+1.single 2:Hierarical 3.Multi-level 4.Multiple(Interface)
+------------------------------------------------------------------------------------------------------------------------------
+** Single Inheritance **
+It is the type of inheritance in which there is one base class and one derived class
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Inheritance
+{
+
+  public class Base  ///base class
+    {
+        public string credit()
+        {
+            return "1000 is credit";
+        }
+    }
+    public class derived :Base //derived class
+    {
+        public string debit()
+        {
+            credit();
+            return "Balance is debited";
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            derived obj = new derived();
+            //obj.credit();
+            //obj.debit();
+            Console.WriteLine("The aleet is {0}", obj.debit());
+            Console.ReadKey();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------
+**Hierarical inheritance**
+This is the type of inheritance in which there are multiple classes derived from one base class. 
+This type of inheritance is used when there is a requirement of one class feature that is needed in multiple classes
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Inheritance
+{
+
+  public class Base   // base class
+    {
+        public string credit()
+        {
+            return "1000 is credit";
+        }
+    }
+    public class derived :Base  //first derived class
+    {
+        public string debit()
+        {
+            credit();
+            return "Balance is debited";
+        }
+    }
+    public class secondderived:Base   //second derived class
+    {
+        public string both()
+        {
+            return "neither credit nor debit";
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            secondderived obj = new secondderived();
+            //obj.credit();
+            //obj.debit();
+            Console.WriteLine("The aleet is {0}", obj.both());
+            Console.ReadKey();
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+**Multi-Level Inheritance**
+When one class is derived from another derived class then this type of inheritance is called multilevel inheritance.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Inheritance
+{
+
+  public class Base
+    {
+        public string credit()
+        {
+            return "1000 is credit";
+        }
+    }
+    public class derived :Base
+    {
+        public string debit()
+        {
+            credit();
+            return "Balance is debited";
+        }
+    }
+    public class secondderived:derived
+    {
+        public string both()
+        {
+            return "neither credit nor debit";
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            secondderived obj = new secondderived();
+            //obj.credit();
+            //obj.debit();
+            Console.WriteLine("The aleet is {0}", obj.both());
+            Console.ReadKey();
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

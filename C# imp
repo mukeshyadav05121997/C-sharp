@@ -1,0 +1,54 @@
+Data abstraction is the process of hiding certain details and showing only essential information to the user.
+Abstraction can be achieved with either abstract classes or interfaces
+Why And When To Use Abstract Classes and Methods?
+To achieve security - hide certain details and only show the important details of an object
+
+abstract class Animal 
+{
+  public abstract void animalSound();
+  public void sleep() 
+  {
+    Console.WriteLine("I am Sleeping");
+  }
+}
+From the example above, it is not possible to create an object of the Animal class
+** so now we have to inherit some class from this 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace abstract_class
+{
+
+    abstract class Animal    //first class
+    {
+        public abstract void Animalsound();  //abstarct method
+        public void sleep()
+        {
+            Console.WriteLine("I am feeling sleepy");
+        }
+    }
+        class Pig : Animal    //second class
+        {
+            public override void Animalsound()
+            {
+                Console.WriteLine(" ohh Great Abstraction is working");
+            }
+        }
+    
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Pig obj = new Pig();
+            obj.sleep();
+            obj.Animalsound();
+                
+               // Console.ReadKey();
+            }
+        }
+    
+}

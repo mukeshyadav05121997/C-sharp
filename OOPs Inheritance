@@ -137,6 +137,48 @@ namespace Inheritance
     }
 }
 --------------------------------------------------------------------------------------------------------------------------------------
+Interface::::::: Multiple Inheritance
+Like abstract classes, interfaces cannot be used to create objects 
+(in the example above, it is not possible to create an "IAnimal" object in the Program class)
+Interface methods do not have a body - the body is provided by the "implement" class
+On implementation of an interface, you must override all of its methods
+Interfaces can contain properties and methods, but not fields/variables
+Interface members are by default abstract and public
+An interface cannot contain a constructor (as it cannot be used to create objects)
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Interface
+{
+    public interface IAnimal
+    {
+        void sound();
+    }
+    class Pig : IAnimal
+    {
+        public void sound()
+        {
+            Console.WriteLine("WOW greate its working");
+        }
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Pig obj = new Pig();
+            obj.sound();
+            Console.ReadKey();
+        }
+    }
+}
+
 
 
 

@@ -180,6 +180,19 @@ namespace Interface
 }
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+ABSTRACT CLASS	                                              1                    INTERFACE
+It contains both declaration and definition part.	            1      It contains only a declaration part.
+Multiple inheritance is not achieved by abstract class.       1    	Multiple inheritance is achieved by interface.
+It contain constructor.	It does not contain constructor.      1
+It can contain static members.	                              1       It does not contain static members.
+It can contain different types of                             1
+access modifiers like public, private, protected etc.	        1      It only contains public access modifier because everything in the interface is public.
+The performance of an abstract class is fast.	                1       The performance of interface is slow because 
+                                                              1      it requires time to search actual method in the corresponding class.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 

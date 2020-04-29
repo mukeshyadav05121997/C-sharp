@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace matrixx
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string First;
+            string Last;
+            First = "Mukesh ";
+            Last = "Mukesh ";
+  ****************//concatenation of string******************************************
+            string FullName = First + Last;
+            Console.WriteLine("The fullname is {0}", FullName);
+  **************************** //Comparison of string****************************************
+            if (string.Compare(First, Last) == 0)// it compare space too
+            {
+                Console.WriteLine(First + " and " + Last + " Are Equal");
+            }
+            else
+            {
+                Console.WriteLine(First + "  and  " + Last + " are not equal");
+            }
+------------------------------------------------------------------------------------------------------------------------------------
+            //find the word
+            string message = "This is my Country whose name is India";
+            if (message.Contains("my"))
+            {
+                Console.WriteLine("The word MY is found ");
+            }
+            else
+            {
+                Console.WriteLine("Word is not available");
+            }
+            // substring
+            Console.WriteLine(message);
+            string str = message.Substring(24);
+            Console.WriteLine(str);
+            Console.ReadLine();
+
+        }
+    }
+}

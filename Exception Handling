@@ -13,3 +13,48 @@ The catch keyword indicates the catching of an exception.
 For example, if you open a file, it must be closed whether an exception is raised or not.
 
 **throw − A program throws an exception when a problem shows up. This is done using a throw keyword.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exception_Handling
+{
+
+  public  class DivNumber
+    {
+        int Result;
+      public  DivNumber()
+        {
+            Result = 0;
+        }
+        public void Division(int i1,int i2)
+        {
+            try
+            {
+                Result = i1 / i2;
+            }
+            catch(DivideByZeroException e)
+            {
+                Console.WriteLine("Exception Caught {0}", e);
+            }
+            finally
+            {
+                Console.WriteLine("The result is {0}", Result);
+            }
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            DivNumber D1 = new DivNumber();
+            D1.Division(100, 0);
+            Console.ReadKey();
+        }
+    }
+}
+

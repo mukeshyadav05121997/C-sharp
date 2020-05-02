@@ -155,15 +155,22 @@ using System.Threading.Tasks;
 
 namespace Interface
 {
-    public interface IAnimal
+    public interface IAnimal   ///interface
     {
         void sound();
     }
-    class Pig : IAnimal
+    public interface ITiger   ///interface
+    {
+    void Food();
+    }
+    class Pig : IAnimal,Itiger
     {
         public void sound()
         {
             Console.WriteLine("WOW greate its working");
+        }
+        public void food()
+        {
         }
     }
 

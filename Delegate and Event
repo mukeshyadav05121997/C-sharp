@@ -74,4 +74,49 @@ public static void Main(String []args)
 } 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------
-          
+ _________________ Multicasting of a Delegate__________________________________________
+Multicasting of delegate is an extension of the normal delegate(sometimes termed as Single Cast Delegate).
+It helps the user to point more than one method in a single call.
+
+Properties:
+
+Delegates are combined and when you call a delegate then a complete list of methods is called.
+All methods are called in First in First Out(FIFO) order.
+‘+’ or ‘+=’ Operator is used to add the methods to delegates.
+‘–’ or ‘-=’ Operator is used to remove the methods from the delegates list.
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Multicasting_Delegate
+{
+    class geeks
+    {
+        public delegate void rect(int a, int b);
+
+        public void area(int a, int b)
+        {
+            Console.WriteLine("The area of rectangle is {0}", a * b);
+        }
+        public void perimeter(int a, int b)
+        {
+            Console.WriteLine("The perimeter of rectange is {0}", 2 * a * b);
+        }
+
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                geeks obj = new geeks();
+                rect objec= new rect(obj.area);
+                objec = objec + obj.perimeter;
+                objec.Invoke(10,12);
+                Console.ReadKey();
+            }
+        }
+    }
+}
+

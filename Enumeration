@@ -1,4 +1,5 @@
-//Each of the symbols in the enumeration list stands for an integer value, one greater than the symbol that precedes it. By default, the value of the first enumeration symbol is 0. For example −
+//Each of the symbols in the enumeration list stands for an integer value, one greater than the symbol that precedes it. 
+By default, the value of the first enumeration symbol is 0. For example −
 
 // example  enum Days { Sun, Mon, tue, Wed, thu, Fri, Sat }; we can initiate the value like sun=2 then tue will be 3 and so on
 

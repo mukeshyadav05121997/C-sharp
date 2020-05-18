@@ -1,0 +1,6 @@
+Collection classes are specialized classes for data storage and retrieval.
+These classes provide support for stacks, queues, lists, and hash tables
+
+1)ArrayList
+2)Queue:fifo
+3)stack:LIFO

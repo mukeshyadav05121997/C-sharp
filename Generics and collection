@@ -1,0 +1,20 @@
+Generics allow you to define a class with placeholders for the type of its fields, methods, parameters, etc.
+Generics replace these placeholders with some specific type at compile time.
+
+
+
+
+
+
+
+
+Collection classes are specialized classes for data storage and retrieval.
+These classes provide support for stacks, queues, lists, and hash tables
+Collections provide a more flexible way to work with groups of objects. 
+Unlike arrays, the group of objects you work with can grow and shrink dynamically as the needs of the application change. 
+For some collections,you can assign a key to any object that you put 
+into the collection so that you can quickly retrieve the object by using the key.
+
+1)ArrayList
+2)Queue:fifo
+3)stack:LIFO

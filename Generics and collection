@@ -1,12 +1,49 @@
+-------------------GENERICS-----------------------------------------------------------------------------------------------------------
 Generics allow you to define a class with placeholders for the type of its fields, methods, parameters, etc.
 Generics replace these placeholders with some specific type at compile time.
+using System.IO;
+using System;
 
+public class gen<T>
+{
+    private T data;
+    public T value
+    {
+        get
+        {
+           return this.data; 
+        }
+        set
+        {
+           this.data=value; 
+        }
+        
+    }
+}
 
+class Program
+{
+    static void Main()
+    {
+    gen<string> name=new gen<string>();
+    name.value="Mukesh";
+    gen<int> birth=new gen<int>();
+    birth.value=5;
+    
+    Console.WriteLine("The name of person is {0}",name.value);
+     Console.WriteLine("The birth of person is {0}",birth.value);
+    }
+}
+Generics is a technique that improves your programs in many ways such as:
 
-
-
-
-
+It helps you in code reuse, performance and type safety.
+You can create your own generic classes, methods, interfaces and delegates.
+You can create generic collection classes.
+The .NET framework class library contains many new generic collection classes in System.Collections.Generic namespace.
+You can get information on the types used in generic data type at run-time
+=========================================================================================================================================
+========================================================================================================================================
+------------------------------COLLECTION------------------------------------------------------------------------------------------
 
 Collection classes are specialized classes for data storage and retrieval.
 These classes provide support for stacks, queues, lists, and hash tables
@@ -14,7 +51,57 @@ Collections provide a more flexible way to work with groups of objects.
 Unlike arrays, the group of objects you work with can grow and shrink dynamically as the needs of the application change. 
 For some collections,you can assign a key to any object that you put 
 into the collection so that you can quickly retrieve the object by using the key.
+@@@@@
+1.LIST::: The IList interface includes properties and methods to add, insert, remove elements in the collection and also individual element can be accessed by index. 
+The ArrayList and BitArray collections implement IList interface
+    1)ArrayList:ArrayList stores objects of any type like an array.
+      However, there is no need to specify the size of the ArrayList like with an array as it grows automatically
+      using System.IO;
+using System;
+using System.Collections;
 
-1)ArrayList
-2)Queue:fifo
-3)stack:LIFO
+class Program
+{
+    static void Main()
+    {
+        Ilist myarraylist = new ArrayList()
+        {
+            Mukesh,
+            5,
+            December,
+            1997
+        };
+        foreach(var num in myarraylist)
+        Console.WriteLine(num);
+    }
+}
+    
+    &&&&&&&&&&&&&&&&&&&&
+    using System;
+using System.Collections;
+					
+public class Program
+{
+	public static void Main()
+	{
+	    IList myarraylist=new ArrayList();
+	    myarraylist.Add(1);
+	    myarraylist.Add("MUKESH");
+	   myarraylist.Insert(1,"Inserted");
+	    foreach(var obj in myarraylist)
+	    Console.WriteLine(obj);
+	}
+}
+
+    
+@@@@@    
+2)COLLECTION:::ICollection: The ICollection interface is the base interface for all the collections that defines sizes, enumerators, and synchronization methods for all non-generic collections. 
+The Queue and Stack collection implement ICollection inferface.
+    1)Queue:fifo
+    2)stack:LIFO
+@@@@@
+3)Dictionary::::IDictionary: The IDictionary interface represents a non-generic collection of key/value pairs. 
+The Hashtable and SortedList implement IDictionary interface and so they store key/value pairs
+    1)Hashtable:Hashtable stores key and value pairs. It retrieves the values by comparing the hash value of the keys
+    2sortedlist:SortedList stores key and value pairs. It automatically arranges elements in ascending order of key by default.
+                C# includes both, generic and non-generic SortedList collection

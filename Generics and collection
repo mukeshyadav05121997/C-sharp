@@ -51,6 +51,8 @@ Collections provide a more flexible way to work with groups of objects.
 Unlike arrays, the group of objects you work with can grow and shrink dynamically as the needs of the application change. 
 For some collections,you can assign a key to any object that you put 
 into the collection so that you can quickly retrieve the object by using the key.
+
+NON GENERICS COLLECTION  ++++++++++++++++++++++++++
 @@@@@
 1.LIST::: The IList interface includes properties and methods to add, insert, remove elements in the collection and also individual element can be accessed by index. 
 The ArrayList and BitArray collections implement IList interface
@@ -103,5 +105,100 @@ The Queue and Stack collection implement ICollection inferface.
 3)Dictionary::::IDictionary: The IDictionary interface represents a non-generic collection of key/value pairs. 
 The Hashtable and SortedList implement IDictionary interface and so they store key/value pairs
     1)Hashtable:Hashtable stores key and value pairs. It retrieves the values by comparing the hash value of the keys
-    2sortedlist:SortedList stores key and value pairs. It automatically arranges elements in ascending order of key by default.
+    
+    using System;
+using System.Collections;
+
+public class Program
+{
+	public static void Main()
+	{
+		Hashtable ht = new Hashtable()
+		{
+			{ 1, "One" },
+			{ 2, "Two" },
+			{ 3, "Three" },
+			{ 4, "Four" },
+			{ 5, null },
+			{ "Fv", "Five" },
+			{ 8.5F, 8.5 }
+		};
+
+		
+		foreach (DictionaryEntry item in ht)
+			Console.WriteLine("key:{0}, value:{1}",item.Key, item.Value);
+	}
+}
+
+output
+key:Fv, value:Five
+key:8.5, value:8.5
+key:5, value:
+key:4, value:Four
+key:3, value:Three
+key:2, value:Two
+key:1, value:One
+    
+    
+*****2)sortedlist:SortedList stores key and value pairs. It automatically arranges elements in ascending order of key by default.
                 C# includes both, generic and non-generic SortedList collection
+		
+using System;
+using System.Collections;
+
+public class Program
+{
+	public static void Main()
+	{
+		SortedList sortedList = new SortedList(){
+                                {3, "Three"},
+                                {4, "Four"},
+                                {1, "One"},
+                                {5, "Five"},
+                                {2, "Two"}
+                            };
+		
+		foreach(DictionaryEntry kvp in sortedList)
+			Console.WriteLine("key: {0}, value: {1}", kvp.Key , kvp.Value );
+	}
+}
+output
+key: 1, value: One
+key: 2, value: Two
+key: 3, value: Three
+key: 4, value: Four
+key: 5, value: Five
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+
+GENERICS COLLECTION:::
+DICTIONARY::Dictionary is a generic collection. So it can store key-value pairs of specific data types.
+Dictionary throws an exception if we try to find a key which does not exist.
+the Dictionary in C# is a collection of Keys and Values, where key is like word and value is like definition.
+Dictionary cannot include duplicate or null keys, where as values can be duplicated or set as null.
+Keys must be unique otherwise it will throw a runtime exception.
+
+using System;
+using System.Collections.Generic;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Dictionary<int, string> dict = new Dictionary<int, string>()
+                                                            {
+                                                                {1,"One"},
+                                                                {2, "Two"},
+                                                                {3,"Three"}
+                                                            };
+
+		foreach (KeyValuePair<int, string> item in dict)
+		{
+			Console.WriteLine("Key: {0}, Value: {1}", item.Key, item.Value);
+		}
+	}
+}
+
+output:Key: 1, Value: One
+Key: 2, Value: Two
+Key: 3, Value: Three

@@ -46,3 +46,59 @@ namespace matrixx
         }
     }
 }
+
+=========================================================================================================================================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace q3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string f1 = "Mukesh";
+            string f2 = "Yadav";
+
+            //Compare method
+            if (string.Compare(f1,f2)==0)  
+            {
+                Console.WriteLine(f1 + " and " + f2 + " Are Equal");
+            }
+            else
+            {
+                Console.WriteLine(f1 + " and " + f2 + " Are Not Equal");
+            }
+
+
+            //copy method
+            string f3 = string.Copy(f1);  
+            Console.WriteLine("The value is {0}", f3);
+
+
+            //Contains method
+            string f4 = "I am working in cts";
+            if (f4.Contains("am"))
+            {
+                Console.WriteLine("Wow congratulation,Contains Method is working");
+            }
+            else
+            {
+                Console.WriteLine(" Word not found");
+            }
+
+            //indexof method
+            int indexpos = f4.IndexOf("w");
+            Console.WriteLine("The position of w is {0}",indexpos);
+
+            //join method
+            object[] arr = {"My","age","is","22"};
+            string j = string.Join("-", arr);
+            Console.WriteLine("The join method is {0}", j);
+        }
+    }
+}
+

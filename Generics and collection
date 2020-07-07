@@ -34,6 +34,44 @@ class Program
      Console.WriteLine("The birth of person is {0}",birth.value);
     }
 }
+
+
+EXAMPLE OF GENEREICS WITH CONSTRUCTOR
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace generics
+{
+   public class gen<T>
+    {
+        
+       public gen(T msg)
+        {
+            Console.WriteLine(msg);
+         }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            gen<int> obj = new gen<int>(6);
+            
+        }
+    }
+}
+
+
+Generic class	                                            Description
+Collection<T>	                                          The basis for a generic collection Comparer compares two generic objects for equality
+Dictionary<TKey, TValue>	                          A generic collection of name/value pairs
+List<T>	                                                  A dynamically resizable list of Items
+Queue<T>	                                          A generic implementation of a first-in, first-out (FIFO) list
+Stack<T>	                                          A generic implementation of a last-in, first-out (LIFO) list
+
+
 Generics is a technique that improves your programs in many ways such as:
 
 It helps you in code reuse, performance and type safety.
@@ -54,46 +92,110 @@ into the collection so that you can quickly retrieve the object by using the key
 
 NON GENERICS COLLECTION  ++++++++++++++++++++++++++
 @@@@@
-1.LIST::: The IList interface includes properties and methods to add, insert, remove elements in the collection and also individual element can be accessed by index. 
-The ArrayList and BitArray collections implement IList interface
     1)ArrayList:ArrayList stores objects of any type like an array.
       However, there is no need to specify the size of the ArrayList like with an array as it grows automatically
       using System.IO;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Collections;
 
-class Program
+namespace collectionarraylist
 {
-    static void Main()
+    class Program
     {
-        Ilist myarraylist = new ArrayList()
+        static void Main(string[] args)
         {
-            Mukesh,
-            5,
-            December,
-            1997
-        };
-        foreach(var num in myarraylist)
-        Console.WriteLine(num);
+            ArrayList myarrraylsit = new ArrayList();
+
+
+                myarrraylsit.Add("Hii");
+                myarrraylsit.Add("Mukesh");
+                myarrraylsit.Add("Yadav");
+                myarrraylsit.Add("wish u great ");
+                myarrraylsit.Add(18);
+                myarrraylsit.Add("Birthday");
+
+
+            foreach (var num in myarrraylsit)
+            {
+                Console.WriteLine(num);
+               
+            }
+            Console.WriteLine(myarrraylsit.Capacity);
+            Console.WriteLine(myarrraylsit.Count);
+
+            Console.WriteLine(myarrraylsit.IsFixedSize);
+            Console.WriteLine(myarrraylsit.IsReadOnly);
+            Console.WriteLine(myarrraylsit.IsSynchronized);
+
+            if(myarrraylsit.Contains("Yadav"))
+            {
+                Console.WriteLine("Yes exist at {0}",myarrraylsit.IndexOf("Yadav"));
+
+            }
+            else
+            {
+                Console.WriteLine("It does not exist");
+            }
+
+          
+            
+
+            myarrraylsit.RemoveAt(1);
+
+            foreach (var num in myarrraylsit)
+            {
+                Console.WriteLine(num);
+
+            }
+
+
+
+
+        }
     }
 }
+
+  
+
+
+
     
-    &&&&&&&&&&&&&&&&&&&&
-    using System;
+   2nd EXAMPLE
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Collections;
-					
-public class Program
+
+namespace p
 {
-	public static void Main()
-	{
-	    IList myarraylist=new ArrayList();
-	    myarraylist.Add(1);
-	    myarraylist.Add("MUKESH");
-	   myarraylist.Insert(1,"Inserted");
-	    foreach(var obj in myarraylist)
-	    Console.WriteLine(obj);
-	}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            aRR myarray = new ArrayList();
+            {
+                myarray.Add(1);
+                myarray.Add("Mukesh");
+                myarray.Insert(2, "Yadav"); //after two place
+
+                foreach(var a in myarray)
+                {
+                    Console.WriteLine(a);
+                }
+            }
+            
+        }
+    }
 }
+
+=====================================================================================================================================================================================================
+
 
     
 @@@@@    

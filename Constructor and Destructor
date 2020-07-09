@@ -2,9 +2,13 @@ Constructor is member  function which get executed when object of is created of 
 A constructor has exactly the same name as that of class and it does not have any return type
 
 There are two type of constructor
-1.Default constructor:which do not have parameter
-2.parameter constructor:which have parameter
+Default constructor
+Parameterized constructor
+Copy constructor
+Static constructor
+Private constructor
 --------------------------------------------------------------------------------------------------------------------------------
+-----------------------------Default constructor---------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
 using System.Linq;

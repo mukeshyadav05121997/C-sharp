@@ -1,3 +1,6 @@
+A string is an object of type String whose value is text.
+Internally, the text is stored as a sequential read-only collection of Char objects
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

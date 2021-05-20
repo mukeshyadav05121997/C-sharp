@@ -93,7 +93,13 @@ namespace structureee
 }
 
 --------------------------------------------------------------------------------------------------------------------------------------
-**Dynamic polymorphism :DYNAMIC POLYMORPHISM EXAMPLE IS ABSTRACT CLASS ::::::::::::FOR MORE INFORMATION PLEASE VISIT AT ABSTRACTION TOPIC:
+**Dynamic polymorphism : 
+It is of two type:
+1.Overide method
+2.Virtual method
+=======================================================================================
+**Override Method
+DYNAMIC POLYMORPHISM EXAMPLE IS ABSTRACT CLASS ::::::::::::FOR MORE INFORMATION PLEASE VISIT AT ABSTRACTION TOPIC:
 1.IT HAVE SEALED CLASS :WHOSE INHERITANCE CAN NOT BE POSSIBLE:
 
 C# allows you to create abstract classes that are used to provide partial class implementation of an interface.
@@ -107,6 +113,74 @@ You cannot create an instance of an abstract class
 You cannot declare an abstract method outside an abstract class
 
 When a class is declared sealed, it cannot be inherited, abstract classes cannot be declared sealed.
+
+========================================================================================================================================
+VIRTUAL METHOD::
+C# virtual method is a method that can be redefined in derived classes.
+In C#, a virtual method has an implementation in a base class as well as derived the class.
+It is used when a method's basic functionality is the same but sometimes more functionality is needed in the derived class.
+A virtual method is created in the base class that can be overriden in the derived class.
+We create a virtual method in the base class using the virtual keyword and that method is overriden in the derived class using the override keyword.
+IMPORTANT POINT:By Default,it is non virtual method:
+1. By default, methods are non-virtual. We can't override a non-virtual method.
+2. We can't use the virtual modifier with the static, abstract, private or override modifiers. 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace structureee
+{
+  public class Distance
+    {
+        public Double speed;
+        public float time;
+
+        public Distance(double sp,float tm)
+        {
+            speed = sp;
+            time = tm;
+        }
+
+        public virtual float calculate()
+        {
+            return (float)(speed * time);
+
+        }
+
+         class moredetail:Distance
+        {
+            public float Duration;
+            public moredetail(double sp,float tm):base(sp,tm)
+            {
+
+            }
+            public override float calculate()
+            {
+                return Duration = (float)(speed * time);
+            }
+
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Distance obj = new Distance(20,30);
+
+            Console.WriteLine("The complete Distance is {0}",obj.calculate());
+
+        }
+    }
+}
+
+
+
+
+
 
 
 

@@ -177,6 +177,9 @@ namespace structureee
     }
 }
 
+Abstract methods do not provide an implementation and force the derived classes to override the method. 
+Virtual methods have an implementation and provide the derived classes with the option of overriding it.
+
 
 
 

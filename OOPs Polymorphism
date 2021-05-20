@@ -8,6 +8,9 @@ Dynamic / Runtime Polymorphism
 *********Static/compile Polymorphism***************
 Its of two type
 1.Method Overloading:
+2.Operator Overlaoding
+==========================================================================================================================================================
+1.  METHOD OVERLOADING
 It is also known as Early Binding. Method overloading is an example of Static Polymorphism.
 In overloading, the method / function has a same name but different signatures. 
 It is also known as Compile Time Polymorphism because the decision of which method is to be called is made at compile time.
@@ -34,12 +37,94 @@ class Program
 } 
 
 
-2.Operator Overloading
+2.Operator Overloading::The return type can be of any type except void for unary operators like !, ~, + and dot (.) 
+but the return type must be the type of ‘Type’ for – and ++ operators and must be a bool type for true as well as false operators.
+But do remember that the true and false operators can be overloaded as pairs only. 
+The compilation error arises if a class declares one of these operators without declaring the other.
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace structureee
+{
+  public  class  calculator
+    {
+        public int number1;
+        public int number2;
+        public calculator(int num1,int num2)
+        {
+            number1 = num1;
+            number2 = num2;
 
+        }
+        public static calculator operator - (calculator c)
+        {
+            c.number1 = -c.number1;
+            c.number2 = -c.number2;
+            return c;
+        }
+        public void display()
+        {
+            Console.WriteLine("The positive value is {0}",+number1);
+            Console.WriteLine("The Negative value is {0}",+number2);
+        }
+       
+
+    }
+   
+    
+   
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            calculator obj = new calculator(10,-20);
+            obj = -obj;
+            obj.display();
+         
+
+            
+
+        }
+    }
+}
 
 --------------------------------------------------------------------------------------------------------------------------------------
-**Dynamic polymorphism
+**Dynamic polymorphism :DYNAMIC POLYMORPHISM EXAMPLE IS ABSTRACT CLASS ::::::::::::FOR MORE INFORMATION PLEASE VISIT AT ABSTRACTION TOPIC:
+1.IT HAVE SEALED CLASS :WHOSE INHERITANCE CAN NOT BE POSSIBLE:
+
+C# allows you to create abstract classes that are used to provide partial class implementation of an interface.
+Implementation is completed when a derived class inherits from it. Abstract classes contain abstract methods, which are implemented by the derived class. 
+The derived classes have more specialized functionality.
+
+Here are the rules about abstract classes −
+
+You cannot create an instance of an abstract class
+
+You cannot declare an abstract method outside an abstract class
+
+When a class is declared sealed, it cannot be inherited, abstract classes cannot be declared sealed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
